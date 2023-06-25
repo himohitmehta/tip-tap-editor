@@ -1,4 +1,4 @@
-import { handleImageUpload } from "lib/utils/editor";
+// import { handleImageUpload } from "lib/utils/editor";
 import { EditorProps } from "@tiptap/pm/view";
 
 export const TiptapEditorProps: EditorProps = {
@@ -16,29 +16,29 @@ export const TiptapEditorProps: EditorProps = {
       }
     },
   },
-  handlePaste: (view, event) => {
-    if (
-      event.clipboardData &&
-      event.clipboardData.files &&
-      event.clipboardData.files[0]
-    ) {
-      event.preventDefault();
-      const file = event.clipboardData.files[0];
-      return handleImageUpload(file, view, event);
-    }
-    return false;
-  },
-  handleDrop: (view, event, _slice, moved) => {
-    if (
-      !moved &&
-      event.dataTransfer &&
-      event.dataTransfer.files &&
-      event.dataTransfer.files[0]
-    ) {
-      event.preventDefault();
-      const file = event.dataTransfer.files[0];
-      return handleImageUpload(file, view, event);
-    }
-    return false;
-  },
+  // handlePaste: (view, event) => {
+  //   if (
+  //     event.clipboardData &&
+  //     event.clipboardData.files &&
+  //     event.clipboardData.files[0]
+  //   ) {
+  //     event.preventDefault();
+  //     const file = event.clipboardData.files[0];
+  //     return handleImageUpload(file, view, event);
+  //   }
+  //   return false;
+  // },
+  // handleDrop: (view, event, _slice, moved) => {
+  //   if (
+  //     !moved &&
+  //     event.dataTransfer &&
+  //     event.dataTransfer.files &&
+  //     event.dataTransfer.files[0]
+  //   ) {
+  //     event.preventDefault();
+  //     const file = event.dataTransfer.files[0];
+  //     return handleImageUpload(file, view, event);
+  //   }
+  //   return false;
+  // },
 };
